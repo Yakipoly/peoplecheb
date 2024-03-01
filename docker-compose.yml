@@ -1,0 +1,18 @@
+version: '3'
+services:
+  people_cheb_fast_api:
+    build: ./
+    container_name: people_cheb_fast_api
+    restart: on-failure
+    volumes:
+      - ./app:/app
+    ports:
+      - "7000:7000"
+    deploy:
+      resources:
+        limits:
+          cpus: 0.50
+          memory: 1000M
+        reservations:
+          memory: 1000M
+        
